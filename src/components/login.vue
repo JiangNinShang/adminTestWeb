@@ -4,8 +4,8 @@
       <el-card shadow="always">
         <div slot="header"><h1>登录</h1></div>
         <el-form ref="form" :model="form" label-width="80px" :rules="rules">
-          <el-form-item label="用户名" prop="name"><el-input v-model="form.name"></el-input></el-form-item>
-          <el-form-item label="密码" prop="pwd"><el-input v-model="form.pwd"></el-input></el-form-item>
+          <el-form-item label="用户名" prop="uname"><el-input v-model="form.uname"></el-input></el-form-item>
+          <el-form-item label="密码" prop="password"><el-input v-model="form.password"></el-input></el-form-item>
           <el-form-item>
             <div align="right"><a href="#">忘记密码</a></div>
             <el-row>
@@ -21,16 +21,16 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'login',
   data () {
     return {
       form: {
-        name: '',
-        pwd: ''
+        uname: '',
+        password: ''
       },
       rules: {
-        name: [{ required: true, message: '请输入用户名', trigger: 'blur' }, { min: 6, max: 8, message: '用户名长度在 6 到 8 个字符', trigger: 'blur' }],
-        pwd: [{ required: true, message: '请输入密码', trigger: 'blur' }, { min: 6, max: 8, message: '密码长度在 6 到 8 个字符', trigger: 'blur' }]
+        uname: [{ required: true, message: '请输入用户名', trigger: 'blur' }, { min: 6, max: 8, message: '用户名长度在 6 到 8 个字符', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }, { min: 6, max: 8, message: '密码长度在 6 到 8 个字符', trigger: 'blur' }]
       }
     }
   },

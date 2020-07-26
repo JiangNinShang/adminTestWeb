@@ -14,7 +14,15 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "area-data": "^5.0.6",
+    "area-data-vue": "^1.0.9",
+    "area-linkage-vue": "^5.1.2",
+    "axios": "^0.19.2",
+    "echarts": "^4.8.0",
+    "jqeury": "0.0.1-security",
     "vue": "^2.5.2",
+    "vue-area-linkage": "^5.1.0",
+    "vue-echarts": "^5.0.0-beta.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
