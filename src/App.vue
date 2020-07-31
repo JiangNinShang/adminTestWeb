@@ -1,13 +1,20 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <el-container>
+    <el-header><Head></Head></el-header>
+    <el-main>
+      <div id="app"><router-view /></div>
+    </el-main>
+  </el-container>
 </template>
 
 <script>
+import Head from '@/components/head.vue';
 export default {
-  name: 'App'
-}
+  name: 'App',
+  components: {
+    Head
+  }
+};
 </script>
 
 <style>
@@ -17,6 +24,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
