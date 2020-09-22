@@ -2,10 +2,10 @@
   <el-row style="margin-top: 0px;">
     <el-col :span="12" :offset="6">
       <el-card shadow="always">
-        <div slot="header"><h1>登&nbsp;&nbsp;&nbsp;录</h1></div>
+        <div slot="header" align="center"><h1>登&nbsp;&nbsp;&nbsp;录</h1></div>
         <el-form ref="form" :model="form" label-width="100px" :rules="rules" label-position="right">
           <el-form-item label="用户名:" prop="uname"><el-input v-model="form.uname" suffix-icon="el-icon-s-custom" clearable></el-input></el-form-item>
-          <el-form-item label="密码:" prop="password"><el-input v-model="form.password" suffix-icon="el-icon-more" show-password clearable></el-input></el-form-item>
+          <el-form-item label="密码:" prop="password"><el-input v-model="form.password" show-password clearable></el-input></el-form-item>
           <el-form-item>
             <el-row>
               <el-col :span="5"><el-checkbox v-model="checked">自动登录</el-checkbox></el-col>
@@ -31,6 +31,7 @@
               </el-col>
             </el-row>
           </div>
+          <br />
           <br />
           <el-form-item>
             <el-row>

@@ -2,7 +2,7 @@
   <el-row>
     <el-col :span="12" :offset="6">
       <el-card shadow="always">
-        <div slot="header"><h1>注&nbsp;&nbsp;&nbsp;册</h1></div>
+        <div slot="header" align="center"><h1>注&nbsp;&nbsp;&nbsp;册</h1></div>
         <el-form ref="form" :model="form" label-width="80px" :rules="rules" label-position="right">
           <el-form-item label="用户名 :" prop="uname"><el-input v-model="form.uname" suffix-icon="el-icon-s-custom" placeholder="请输入用户名" clearable/></el-form-item>
           <el-form-item label="密码 :" prop="password"><el-input v-model="form.password" suffix-icon="el-icon-more" placeholder="请输入密码" show-password clearable/></el-form-item>

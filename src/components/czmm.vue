@@ -36,7 +36,7 @@
 <script>
 export default {
   name: 'czmm',
-  data() {
+  data () {
     return {
       active: 0,
       restaurants: [],
@@ -44,14 +44,14 @@ export default {
       pwd: '',
       phone: 19894368119,
       yzm: '',
-      count:60,
+      count: 60,
       time: '发送验证码',
       timeout: null,
       intervalId: null
-    };
+    }
   },
   methods: {
-    loadAll() {
+    loadAll () {
       return [
         { value: '三全鲜食（北新泾店）', address: '长宁区新渔路144号' },
         { value: 'Hot honey 首尔炸鸡（仙霞路）', address: '上海市长宁区淞虹路661号' },
@@ -101,51 +101,51 @@ export default {
         { value: '(小杨生煎)西郊百联餐厅', address: '长宁区仙霞西路88号百联2楼' },
         { value: '阳阳麻辣烫', address: '天山西路389号' },
         { value: '南拳妈妈龙虾盖浇饭', address: '普陀区金沙江路1699号鑫乐惠美食广场A13' }
-      ];
+      ]
     },
-    querySearchAsync(queryString, cb) {
-      var restaurants = this.restaurants;
-      var results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants;
-      clearTimeout(this.timeout);
+    querySearchAsync (queryString, cb) {
+      var restaurants = this.restaurants
+      var results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants
+      clearTimeout(this.timeout)
       this.timeout = setTimeout(() => {
-        cb(results);
-      }, 3000 * Math.random());
+        cb(results)
+      }, 3000 * Math.random())
     },
-    createStateFilter(queryString) {
+    createStateFilter (queryString) {
       return name => {
-        return name.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0;
-      };
-    },
-    handleSelect(item) {
-      console.log(item);
-    },
-    xyb() {
-      if (this.active < 3) {
-        this.active += 1;
-      } else if (this.active === 3) {
-        this.$router.replace('/');
+        return name.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
       }
     },
-    fs() {
+    handleSelect (item) {
+      console.log(item)
+    },
+    xyb () {
+      if (this.active < 3) {
+        this.active += 1
+      } else if (this.active === 3) {
+        this.$router.replace('/')
+      }
+    },
+    fs () {
       if (this.intervalId != null) {
-        return;
+        return
       }
       this.intervalId = setInterval(() => {
-        this.count -= 1;
-        if( this.count === 0 ) {
-          clearInterval(this.intervalId); //清除计时器
-          this.intervalId = null; //设置为null
-          this.time = "发送验证码"
-        }else{
-          this.time = this.count+'秒后重发'
+        this.count -= 1
+        if (this.count === 0) {
+          clearInterval(this.intervalId) // 清除计时器
+          this.intervalId = null // 设置为null
+          this.time = '发送验证码'
+        } else {
+          this.time = this.count + '秒后重发'
         }
-      }, 1000);
+      }, 1000)
     }
   },
-  mounted() {
-    this.restaurants = this.loadAll();
+  mounted () {
+    this.restaurants = this.loadAll()
   }
-};
+}
 </script>
 
 <style>

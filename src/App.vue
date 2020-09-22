@@ -1,28 +1,25 @@
 <template>
   <el-container>
+    <el-backtop>
+    </el-backtop>
     <el-header><Head></Head></el-header>
     <el-main>
-      <div id="app"><router-view /></div>
+      <router-view />
     </el-main>
+    <el-footer><Footer></Footer></el-footer>
   </el-container>
 </template>
 
 <script>
-import Head from '@/components/head.vue';
+import Head from '@/components/head.vue'
+import Footer from '@/components/footer.vue'
 export default {
   name: 'App',
   components: {
-    Head
+    Head,
+    Footer
   }
-};
+}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>
+<style></style>
