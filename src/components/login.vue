@@ -17,9 +17,7 @@
             <el-row>
               <el-col :span="6" :offset="1">
                 <!-- QQ -->
-                <el-avatar
-                  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596204788620&di=4c7bf8ebf1ce2294c2de700596ad12ec&imgtype=0&src=http%3A%2F%2Fa3.att.hudong.com%2F32%2F41%2F01100000000000144736419600455_s.jpg"
-                />
+                <el-avatar src="http://pics.sc.chinaz.com/Files/pic/icons128/5949/q8.png" />
               </el-col>
               <el-col :span="6" :offset="3">
                 <!-- 微信 -->
@@ -48,7 +46,7 @@
 <script>
 export default {
   name: 'login',
-  data() {
+  data () {
     return {
       checked: false,
       form: {
@@ -59,27 +57,27 @@ export default {
         uname: [{ required: true, message: '请输入用户名', trigger: 'blur' }, { min: 6, max: 8, message: '用户名长度在 6 到 8 个字符', trigger: 'blur' }],
         password: [{ required: true, message: '请输入密码', trigger: 'blur' }, { min: 6, max: 8, message: '密码长度在 6 到 8 个字符', trigger: 'blur' }]
       }
-    };
+    }
   },
   methods: {
-    sumbit(form) {
+    sumbit (form) {
       this.$refs[form].validate(valid => {
         if (valid) {
-          alert('submit!');
+          this.store.dispatch('login',this.form)
         } else {
-          console.log('error submit!!');
-          return false;
+          console.log('error submit!!')
+          return false
         }
-      });
+      })
     },
-    register() {
-      this.$router.push('/register');
+    register () {
+      this.$router.push('/register')
     },
-    wj() {
-      this.$router.push('/czmm');
+    wj () {
+      this.$router.push('/czmm')
     }
   }
-};
+}
 </script>
 <style>
 .area-select.large {
