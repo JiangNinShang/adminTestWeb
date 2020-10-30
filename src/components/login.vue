@@ -5,10 +5,10 @@
         <div slot="header" align="center"><h1>登&nbsp;&nbsp;&nbsp;录</h1></div>
         <el-form ref="form" :model="form" label-width="100px" :rules="rules" label-position="right">
           <el-form-item label="用户名:" prop="uname"><el-input v-model="form.uname" suffix-icon="el-icon-s-custom" clearable></el-input></el-form-item>
-          <el-form-item label="密码:" prop="password"><el-input v-model="form.password" show-password clearable></el-input></el-form-item>
+          <el-form-item label="密码:" prop="upwd"><el-input v-model="form.upwd" show-password clearable></el-input></el-form-item>
           <el-form-item>
             <el-row>
-              <el-col :span="5"><el-checkbox v-model="checked">自动登录</el-checkbox></el-col>
+              <el-col :span="5"><el-checkbox v-model="form.auto">自动登录</el-checkbox></el-col>
               <el-col :span="5" :offset="14"><el-button type="text" @click="wj">忘记密码？</el-button></el-col>
             </el-row>
           </el-form-item>
@@ -48,14 +48,14 @@ export default {
   name: 'login',
   data () {
     return {
-      checked: false,
       form: {
         uname: '',
-        password: ''
+        upwd: '',
+        auto: false
       },
       rules: {
-        uname: [{ required: true, message: '请输入用户名', trigger: 'blur' }, { min: 6, max: 8, message: '用户名长度在 6 到 8 个字符', trigger: 'blur' }],
-        password: [{ required: true, message: '请输入密码', trigger: 'blur' }, { min: 6, max: 8, message: '密码长度在 6 到 8 个字符', trigger: 'blur' }]
+        uname: [{ required: true, message: '请输入用户名', trigger: 'blur' }, { min: 1, max: 8, message: '用户名长度在 6 到 8 个字符', trigger: 'blur' }],
+        upwd: [{ required: true, message: '请输入密码', trigger: 'blur' }, { min: 6, max: 8, message: '密码长度在 6 到 8 个字符', trigger: 'blur' }]
       }
     }
   },
@@ -63,10 +63,19 @@ export default {
     sumbit (form) {
       this.$refs[form].validate(valid => {
         if (valid) {
-          this.store.dispatch('login',this.form)
-        } else {
-          console.log('error submit!!')
-          return false
+          this.store.dispatch('login', this.form).then(tes => {
+            if (tes.data) {
+              this.$notify({
+                message: '欢迎您!' + this.form.uname,
+                type: 'success'
+              })
+            } else {
+              this.$notify.error({
+                title: '登录失败',
+                message: '请检测您的账户是否存在'
+              })
+            }
+          })
         }
       })
     },
@@ -93,5 +102,19 @@ export default {
 .el-form-item.is-required:not(.is-no-asterisk) .el-form-item__label-wrap .el-form-item__label:before,
 .el-form-item.is-required:not(.is-no-asterisk) .el-form-item__label:before {
   content: none;
+}
+.el-form-item label:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.el-form-item__label {
+  text-align: justify;
+  height: 50px;
+}
+
+.el-form-item.is-required .el-form-item__label:before {
+  content: none !important;
 }
 </style>

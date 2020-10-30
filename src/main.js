@@ -13,10 +13,11 @@ import 'area-linkage-vue/dist/index.css'
 import AreaLinkageVue from 'area-linkage-vue'
 Vue.prototype.axios = axios
 Vue.prototype.$http = axios
-Vue.prototype.$pcaa = pcaa
 Vue.prototype.store = store
-axios.defaults.headers.post['Content-Type'] = 'application/json'
-Vue.prototype.$http.defaults.baseURL = 'http://192.168.56.1:8090/'
+axios.defaults.headers.post['Content-Type'] = 'application/json;Charset=UTF-8'
+Vue.prototype.$http.defaults.baseURL = 'http://localhost:8090/'
+Vue.prototype.$pcaa = pcaa;
+//设置全局的
 require('echarts')
 Vue.use(ElementUI)
 Vue.use(AreaLinkageVue)

@@ -1,9 +1,10 @@
 <template>
-  <el-menu :default-active="$route.path" class="el-menu-demo" mode="horizontal" overflow-y: scroll active-text-color="red">
+  <!-- $route.path -->
+  <el-menu class="el-menu-demo" mode="horizontal" overflow-y: scroll active-text-color="red">
     <el-menu-item index="/" style="width: 30%;align:left;"><i class="el-icon-s-home">首页</i></el-menu-item>
     <el-menu-item style="width: 40%;" index="search">
       <template slot="title">
-        <el-input placeholder="请输入内容" v-model="$route.path" clearable>
+        <el-input placeholder="请输入内容" v-model="input" clearable>
           <template slot="append">
             <el-button slot="append" icon="el-icon-search"></el-button>
           </template>
@@ -13,9 +14,7 @@
     </el-menu-item>
     <el-submenu index="giao" style="margin-left: 20%;">
       <template slot="title">
-        <el-avatar :size="50" src="https://empty" @error="errorHandler">
-          <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=476262993,2239475519&fm=11&gp=0.jpg" />
-        </el-avatar>
+        <el-avatar :size="50" src="https://empty" @error="errorHandler"><img src="../../static/皱眉.jpg" /></el-avatar>
       </template>
       <el-menu-item index="giao/info" align="center"><i class="el-lion-view el-icon-user">&nbsp;&nbsp;个人信息</i></el-menu-item>
       <el-menu-item index="giao/love" align="center"><i class="el-lion-view el-icon-star-off">&nbsp;&nbsp;我的喜欢</i></el-menu-item>
@@ -30,8 +29,7 @@
 export default {
   data () {
     return {
-      input: '',
-      activeIndex: ''
+      input: ''
     }
   },
   methods: {
