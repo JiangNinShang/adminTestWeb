@@ -90,8 +90,10 @@ export default {
       const reg = /^[1][3,4,5,7,8,9][0-9]{9}$/
       if (value == '' || value == undefined || value == null) {
         callback(new Error('请输入电话号码'))
+      } else if (value.length != 11) {
+        callback(new Error('电话号位为11位数，当前为' + value.length + '位'))
       } else {
-        if (!reg.test(value) && value != '') {
+        if (!reg.test(value)) {
           callback(new Error('请输入正确的电话号码'))
         } else {
           callback()
@@ -105,7 +107,7 @@ export default {
     // }
     return {
       centerDialogVisible: false,
-      restaurants: [{ value: '@qq.com' }, { value: '@126.com' }, { value: '@163.com' }],
+      restaurants: [{ value: '@qq.com' }, { value: '@126.com' }, { value: '@163.com' }, { value: '@aliyun.com' }, { value: '@sohu.com' }, { value: '@sina.com' }],
       form: {
         uname: '',
         upwd: '',
@@ -123,7 +125,6 @@ export default {
         // city: [{ validator: cs, trigger: 'blur' }],
         phone: [{ validator: isPhone, trigger: 'blur' }],
         mail: [{ validator: email, trigger: 'blur' }]
-        // , 'change']
       }
     }
   },
@@ -207,6 +208,25 @@ export default {
       return modes
     }
   }
+  // ,
+  // computed: {
+  //   mdfk: {
+  //     set: function (val) {
+  //       this.form.phone = val
+  //       return val
+  //     },
+  //     get: function () {
+  //       let num = this.form.phone
+  //       if (num == null || undefined == num || num == '') {
+  //         return ''
+  //       } else if (num.length == 11) {
+  //         return this.form.phone.slice(0, 3) + '-' + this.form.phone.slice(3, 7) + '-' + this.form.phone.slice(7, 10)
+  //       } else {
+  //         return this.form.phone
+  //       }
+  //     }
+  //   }
+  // }
 }
 </script>
 
@@ -238,33 +258,27 @@ export default {
 .el-form-item.is-required .el-form-item__label:before {
   content: none !important;
 }
-#inputValue {
-  width: 240px;
-  margin-left: 20px;
-  padding-left: 10px;
-  border-radius: 3px;
-}
 .input_span span {
   display: inline-block;
-  width: 85px;
-  height: 10px;
+  width: 32%;
+  height: 15px;
   background: #eee;
-  line-height: 20px;
+  line-height: 25px;
 }
 
 #one {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-right: 0px solid;
-  margin-left: 20px;
-  margin-right: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #two {
   border-left: 0px solid;
   border-right: 0px solid;
   margin-left: -5px;
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
 #three {
@@ -275,13 +289,14 @@ export default {
 }
 #font span:nth-child(1) {
   color: red;
-  margin-left: 60px;
+  margin-left: 15%;
 }
 #font span:nth-child(2) {
   color: orange;
-  margin: 0 65px;
+  margin-left: 31%;
 }
 #font span:nth-child(3) {
   color: #00d1b2;
+  margin-left: 30%;
 }
 </style>
