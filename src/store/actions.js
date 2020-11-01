@@ -21,5 +21,16 @@ export default {
         console.log(err)
       })
     })
+  },
+  getName(context) {
+    let url = "wdnmd/getName";
+    return new Promise((resolve, reject) => {
+      axios.get(url).then(tes => {
+        resolve(tes)
+      }).catch((err) => {
+        reject(error)
+        console.log(err)
+      })
+    })
   }
 }

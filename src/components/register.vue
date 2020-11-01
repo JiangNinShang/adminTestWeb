@@ -75,16 +75,19 @@ export default {
       callback()
     }
     let email = (rule, value, callback) => {
-      const reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
-      if (value == '' || value == undefined || value == null) {
-        callback()
-      } else {
-        if (!reg.test(value)) {
-          callback(new Error('请输入正确的邮箱地址'))
+      setTimeout(() => {
+        const reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+        if (this.form.mail == '' || this.form.mail == undefined || this.form.mail == null) {
+          callback(new Error('请输入邮箱地址'))
         } else {
-          callback()
+          console.log(this.form.mail)
+          if (!reg.test(this.form.mail)) {
+            callback(new Error('请输入正确的邮箱地址'))
+          } else {
+            callback()
+          }
         }
-      }
+      }, 1000)
     }
     let isPhone = (rule, value, callback) => {
       const reg = /^[1][3,4,5,7,8,9][0-9]{9}$/
@@ -162,7 +165,7 @@ export default {
                 type: 'success'
               })
               this.centerDialogVisible = true
-              this.$router.push('/')
+              // this.$router.push('/')
             } else {
               this.$notify.error({
                 title: '注册失败',

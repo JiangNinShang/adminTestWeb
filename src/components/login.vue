@@ -4,8 +4,11 @@
       <el-card shadow="always">
         <div slot="header" align="center"><h1>登&nbsp;&nbsp;&nbsp;录</h1></div>
         <el-form ref="form" :model="form" label-width="100px" :rules="rules" label-position="right">
-          <el-form-item label="用户名:" prop="uname"><el-input v-model="form.uname" suffix-icon="el-icon-s-custom" clearable></el-input></el-form-item>
-          <el-form-item label="密码:" prop="upwd"><el-input v-model="form.upwd" show-password clearable></el-input></el-form-item>
+          <el-form-item label="用户名:" prop="uname">
+            <el-autocomplete v-model="form.uname" :fetch-suggestions="querySearchAsync" placeholder="请输入用户名" suffix-icon="el-icon-s-custom" clearable></el-autocomplete>
+            <!-- <el-input v-model="form.uname" suffix-icon="el-icon-s-custom" clearable></el-input> -->
+          </el-form-item>
+          <el-form-item label="密码:" prop="upwd"><el-input v-model="form.upwd" placeholder="请输入密码" show-password clearable></el-input></el-form-item>
           <el-form-item>
             <el-row>
               <el-col :span="5"><el-checkbox v-model="form.auto">自动登录</el-checkbox></el-col>
@@ -56,7 +59,8 @@ export default {
       rules: {
         uname: [{ required: true, message: '请输入用户名', trigger: 'blur' }, { min: 1, max: 8, message: '用户名长度在 6 到 8 个字符', trigger: 'blur' }],
         upwd: [{ required: true, message: '请输入密码', trigger: 'blur' }, { min: 6, max: 8, message: '密码长度在 6 到 8 个字符', trigger: 'blur' }]
-      }
+      },
+      restaurants: []
     }
   },
   methods: {
@@ -84,7 +88,34 @@ export default {
     },
     wj () {
       this.$router.push('/czmm')
+    },
+    querySearchAsync (queryString, callback) {
+      if (this.form.uname !== '' && this.form.uname !== null && undefined !== this.form.uname) {
+        var restaurants = this.restaurants
+        // 在数组内查找
+        var results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants
+        clearTimeout(this.timeout)
+        this.timeout = setTimeout(() => {
+          callback(results)
+        }, 2000 * Math.random())
+      } else {
+        let giao = [{ value: '请输入用户名' }]
+        callback(giao)
+      }
+    },
+    createStateFilter (queryString) {
+      return state => {
+        return state.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+      }
     }
+  },
+  mounted () {
+    this.store.dispatch('getName').then(tes => {
+      for (var k in tes.data.data) {
+        let giao = { value: k }
+        this.restaurants.push(giao)
+      }
+    })
   }
 }
 </script>
