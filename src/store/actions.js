@@ -32,5 +32,35 @@ export default {
         console.log(err)
       })
     })
+  },
+  getbyName(context, name) {
+    let params = new FormData();
+    params.append('name', name);
+    let url = "wdnmd/getbyName";
+    return new Promise((resolve, reject) => {
+      axios.post(url, params).then(tes => {
+        resolve(tes)
+      }).catch((err) => {
+        reject(error)
+        console.log(err)
+      })
+    })
+  },
+  updatePwd(context, form) {
+    let params = new FormData();
+    params.append('name', form.name);
+    params.append('pwd', form.pwd);
+    let url = "wdnmd/updataPwd";
+    return new Promise((resolve, reject) => {
+      axios.post(url,params).then(tes => {
+        resolve(tes)
+      }).catch((err) => {
+        reject(error)
+        console.log(err)
+      })
+    })
+  },
+  getbypwd(context, name){
+    
   }
 }

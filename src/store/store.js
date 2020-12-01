@@ -8,17 +8,7 @@ Vue.use(Vuex)
 const state = {
   src: 'https://tianqiapi.com/api.php?style=ya&skin=pitaya',
   // 当前用户
-  user: {
-    id: 'null',
-    name: 'null',
-    pwd: 'null',
-    email: 'null',
-    phone: 'null',
-    sex: 'null',
-    hiredate: 'null',
-    address: 'null',
-    path: 'null'
-  }
+  user: []
 }
 export default new Vuex.Store({
   state,

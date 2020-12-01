@@ -3,12 +3,13 @@ import Router from 'vue-router'
 import login from '@/components/login.vue'
 import register from '@/components/register.vue'
 import czmm from '@/components/czmm.vue'
+import home from '@/components/home.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: login
     },
@@ -21,6 +22,11 @@ export default new Router({
       path: '/czmm',
       name: 'czmm',
       component: czmm
+    },
+    {
+      path: '/',
+      name: 'home',
+      component: home
     }
   ]
 })

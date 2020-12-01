@@ -6,7 +6,6 @@
         <el-form ref="form" :model="form" label-width="100px" :rules="rules" label-position="right">
           <el-form-item label="用户名:" prop="uname">
             <el-autocomplete v-model="form.uname" :fetch-suggestions="querySearchAsync" placeholder="请输入用户名" suffix-icon="el-icon-s-custom" clearable></el-autocomplete>
-            <!-- <el-input v-model="form.uname" suffix-icon="el-icon-s-custom" clearable></el-input> -->
           </el-form-item>
           <el-form-item label="密码:" prop="upwd"><el-input v-model="form.upwd" placeholder="请输入密码" show-password clearable></el-input></el-form-item>
           <el-form-item>
@@ -73,6 +72,7 @@ export default {
                 message: '欢迎您!' + this.form.uname,
                 type: 'success'
               })
+              this.$router.push('/home')
             } else {
               this.$notify.error({
                 title: '登录失败',

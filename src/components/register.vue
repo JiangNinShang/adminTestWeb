@@ -211,25 +211,6 @@ export default {
       return modes
     }
   }
-  // ,
-  // computed: {
-  //   mdfk: {
-  //     set: function (val) {
-  //       this.form.phone = val
-  //       return val
-  //     },
-  //     get: function () {
-  //       let num = this.form.phone
-  //       if (num == null || undefined == num || num == '') {
-  //         return ''
-  //       } else if (num.length == 11) {
-  //         return this.form.phone.slice(0, 3) + '-' + this.form.phone.slice(3, 7) + '-' + this.form.phone.slice(7, 10)
-  //       } else {
-  //         return this.form.phone
-  //       }
-  //     }
-  //   }
-  // }
 }
 </script>
 

@@ -1,10 +1,10 @@
 <template>
   <el-container>
+    <!-- <Player></Player> -->
     <el-backtop></el-backtop>
-    <Player></Player>
     <el-header><Head></Head></el-header>
     <el-main style="margin-top: 50px;"><router-view /></el-main>
-    <el-footer style="margin-top: 10%;"><Footer></Footer></el-footer>
+    <el-footer style="margin-top: 10%;margin-bottom: 10%;"><Footer></Footer></el-footer>
   </el-container>
 </template>
 
@@ -30,4 +30,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+</style>
