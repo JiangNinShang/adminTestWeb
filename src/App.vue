@@ -1,34 +1,30 @@
 <template>
-  <el-container>
-    <!-- <Player></Player> -->
-    <el-backtop></el-backtop>
-    <el-header><Head></Head></el-header>
-    <el-main style="margin-top: 50px;"><router-view /></el-main>
-    <el-footer style="margin-top: 10%;margin-bottom: 10%;"><Footer></Footer></el-footer>
-  </el-container>
+  <div id="app"><router-view /></div>
+  <!-- <el-container> -->
+  <!-- <Player></Player> -->
+  <!-- <el-backtop></el-backtop> -->
+  <!-- <el-header><Head></Head></el-header> -->
+  <!-- <el-main style="margin-top: 50px;"><router-view /></el-main> -->
+  <!-- <el-footer style="margin-top: 50px;margin-bottom: 80px;height: 200px;"><Footer></Footer></el-footer> -->
+  <!-- </el-container> -->
 </template>
 
 <script>
-import Head from '@/components/head.vue'
-import Footer from '@/components/footer.vue'
-import Player from 'zw-player'
+import Player from 'zw-player';
 export default {
   name: 'App',
   components: {
-    Head,
-    Footer,
     Player
-  },
-  created () {
-    this.$nextTick(() => {
-      // 禁用右键
-      document.oncontextmenu = new Function('event.returnValue=false')
-      // 禁用选择
-      document.onselectstart = new Function('event.returnValue=false')
-    })
   }
-}
+  // created () {
+  //   this.$nextTick(() => {
+  //     // 禁用右键
+  //     document.oncontextmenu = new Function('event.returnValue=false')
+  //     // 禁用选择
+  //     document.onselectstart = new Function('event.returnValue=false')
+  //   })
+  // }
+};
 </script>
 
-<style>
-</style>
+<style></style>

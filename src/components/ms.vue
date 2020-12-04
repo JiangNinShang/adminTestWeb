@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-header class="text"><h1 style="color:red;">限时秒杀</h1></el-header>
-    <el-main>
+    <el-main style="margin-top: 80px">
       <el-row :gutter="20">
         <el-col :span="6">
           <el-card shadow="never" class="text">
@@ -19,27 +19,33 @@
             </el-row>
           </el-card>
         </el-col>
-        <el-col :span="6" v-for="i in 3" :key="i">
-          <el-link href="#">
-            <el-card shadow="hover" class="text">
-              <el-image src="https://images.weserv.nl/?url=https://file.pzhanpaihang.com/p/85816883/0_c3374d55d00196816c9c3f796a39dd6f.jpg" style="margin-top: 30px;"></el-image>
-              <h1>鸡脖</h1>
-              <!-- 商品介绍 -->
-              <p><font color="darkgray" size="3px">好吃不贵</font></p>
-              <!-- 新旧价格 -->
-              <font color="orangered" size="5px">10.00</font>
-              <font style="text-decoration:line-through;margin-left: 20px;" color="darkgray" size="3px">11.50</font>
-            </el-card>
-          </el-link>
-        </el-col>
+        <el-carousel :interval="5000" arrow="always">
+          <el-carousel-item v-for="(i, index) in sp" :key="index">
+            <el-col :span="6">
+              <el-link href="#">
+                <el-card shadow="hover" class="text">
+                  <el-image :src="i.img" style="margin-top: 30px;"></el-image>
+                  <h1>{{ i.name }}</h1>
+                  <!-- 商品介绍 -->
+                  <p>
+                    <font color="darkgray" size="3px">{{ i.js }}</font>
+                  </p>
+                  <!-- 新旧价格 -->
+                  <font color="orangered" size="5px">￥{{ i.new }}</font>
+                  <font style="text-decoration:line-through;margin-left: 20px;" color="darkgray" size="3px">￥{{ i.old }}</font>
+                </el-card>
+              </el-link>
+            </el-col>
+          </el-carousel-item>
+        </el-carousel>
       </el-row>
     </el-main>
-    <el-footer></el-footer>
   </el-container>
 </template>
 
 <script>
 export default {
+  props: ['sp'],
   data () {
     return {
       time: '',
@@ -69,8 +75,6 @@ export default {
       }, 10800000)
     }
   },
-  watch: {},
-  components: {},
   created () {
     var myDate = new Date()
     this.djs()
