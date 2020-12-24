@@ -5,18 +5,25 @@ import ECharts from 'vue-echarts/components/ECharts'
 import ElementUI from 'element-ui'
 import axios from 'axios'
 import store from '@/store/store.js'
+import moment from "moment"
 import 'element-ui/lib/theme-chalk/index.css'
 import {
   pcaa
 } from 'area-data-vue'
 import 'area-linkage-vue/dist/index.css'
 import AreaLinkageVue from 'area-linkage-vue'
+import {
+  VueperSlides,
+  VueperSlide
+} from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
 Vue.prototype.axios = axios
 Vue.prototype.$http = axios
 Vue.prototype.store = store
 axios.defaults.headers.post['Content-Type'] = 'application/json;Charset=UTF-8'
 Vue.prototype.$http.defaults.baseURL = 'http://localhost:8090/'
 Vue.prototype.$pcaa = pcaa;
+Vue.prototype.$moment = moment;
 //设置全局的
 require('echarts')
 Vue.use(ElementUI)

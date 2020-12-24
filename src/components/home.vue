@@ -4,7 +4,7 @@
     <el-container>
       <el-aside style="width: 11%;text-align: center;margin-left: 5%;"><cog :item="item"></cog></el-aside>
       <el-main>
-        <el-carousel :interval="5000" height="690px" arrow="always">
+        <el-carousel :interval="5000" height="680px" arrow="always">
           <el-carousel-item v-for="(i, index) in img" :key="index">
             <!-- 大图预览，需要数组 preview-src-list="item"-->
             <!-- 跳转路由，name从那里来 -->
@@ -21,26 +21,26 @@
 </template>
 
 <script>
-import cog from './ClassificationOfGoods.vue'
-import ms from './ms.vue'
-import cbl from './cbl.vue'
-import nk from './nk.vue'
-import footsie from './footsie.vue'
+import cog from './ClassificationOfGoods.vue';
+import ms from './ms.vue';
+import cbl from './cbl.vue';
+import nk from './nk.vue';
+import footsie from './footsie.vue';
 export default {
-  data () {
+  data() {
     return {
       img: [
-        '../../static/白狐儿脸.jpg',
-        '../../static/北凉不悲凉.jpg',
-        '../../static/曹长卿.jpg',
-        '../../static/陈芝豹.jpg',
-        '../../static/大雪龙骑.jpg',
-        '../../static/挡剑.jpg',
-        '../../static/二姐大战陈芝豹.jpg',
-        '../../static/孤身闯北莽.jpg',
-        '../../static/呵呵姑娘.jpg',
-        '../../static/剑开天门.jpg',
-        '../../static/剑来.jpg'
+        '../../static/img/白狐儿脸.jpg',
+        '../../static/img/北凉不悲凉.jpg',
+        '../../static/img/曹长卿.jpg',
+        '../../static/img/陈芝豹.jpg',
+        '../../static/img/大雪龙骑.jpg',
+        '../../static/img/挡剑.jpg',
+        '../../static/img/二姐大战陈芝豹.jpg',
+        '../../static/img/孤身闯北莽.jpg',
+        '../../static/img/呵呵姑娘.jpg',
+        '../../static/img/剑开天门.jpg',
+        '../../static/img/剑来.jpg'
       ],
       item: [
         { value: '春季商品', giao: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }, { value: '6' }, { value: '7' }, { value: '8' }] },
@@ -52,37 +52,52 @@ export default {
       cb: [
         {
           class: 'el-icon-user',
-          font: '关于我们'
-        },
-        {
-          class: 'el-icon-refresh',
-          font: '页面刷新'
+          font: '关于我们',
+          src: 'info'
         },
         {
           // el-icon-shopping-cart-2
           class: 'el-icon-shopping-cart-full',
-          font: '购物车'
+          font: '购物车',
+          src: '/'
         },
         {
           class: 'el-icon-coin',
-          font: '消费记录'
+          font: '消费记录',
+          src: '/'
         },
         {
           // el-icon-chat-dot-round
           class: 'el-icon-chat-round',
-          font: '我的消息'
+          font: '我的消息',
+          src: '/'
         },
         {
           class: 'el-icon-share',
-          font: '分享好友'
+          font: '分享好友',
+          src: '/'
         }
       ],
       sp: [
-        { img: 'https://images.weserv.nl/?url=https://file.pzhanpaihang.com/p/85816883/0_c3374d55d00196816c9c3f796a39dd6f.jpg', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'https://images.weserv.nl/?url=https://file.pzhanpaihang.com/p/85816883/0_c3374d55d00196816c9c3f796a39dd6f.jpg', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'https://images.weserv.nl/?url=https://file.pzhanpaihang.com/p/85816883/0_c3374d55d00196816c9c3f796a39dd6f.jpg', name: 'giao', js: 'js', new: 11.0, old: 15.15 }
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 }
       ]
-    }
+    };
   },
   methods: {},
   components: {
@@ -92,7 +107,7 @@ export default {
     footsie: footsie,
     nk: nk
   }
-}
+};
 </script>
 
 <style>

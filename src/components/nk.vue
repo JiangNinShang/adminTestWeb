@@ -14,7 +14,7 @@
     </el-menu-item>
     <el-submenu index="giao" style="margin-left: 20%;">
       <template slot="title">
-        <el-avatar :size="50" src="https://empty" @error="errorHandler"><img src="../../static/皱眉.jpg" /></el-avatar>
+        <el-avatar :size="50" src="https://empty" @error="errorHandler"><img src="../../static/img/皱眉.jpg" /></el-avatar>
       </template>
       <el-menu-item index="giao/info" align="center"><i class="el-lion-view el-icon-user">&nbsp;&nbsp;个人信息</i></el-menu-item>
       <el-menu-item index="giao/love" align="center"><i class="el-lion-view el-icon-star-off">&nbsp;&nbsp;我的喜欢</i></el-menu-item>
@@ -27,17 +27,17 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       input: ''
-    }
+    };
   },
   methods: {
-    errorHandler () {
-      return true
+    errorHandler() {
+      return true;
     }
   }
-}
+};
 </script>
 
 <style></style>
