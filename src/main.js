@@ -30,6 +30,8 @@ Vue.use(ElementUI)
 Vue.use(AreaLinkageVue)
 Vue.use(axios)
 Vue.component('chart', ECharts)
+require('moment/locale/zh-cn')
+moment.locale('zh-cn');
 Vue.config.productionTip = false
 new Vue({
   el: '#app',

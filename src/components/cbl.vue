@@ -7,12 +7,16 @@
  font-size: 12px;"
   >
     <el-card style="width: 90px;height: 90px;text-align: center;" v-for="(i, index) in cb" :key="index" class="tmd">
-      <!-- <router-link :to="i.src"> -->
-      <el-link :underline="false" @click="tz(i.src)">
+      <el-badge :value="i.num" v-if="i.type == 'badge'">
+        <el-link :underline="false" @click="tz(i.src)">
+          <i :class="i.class" style="font-size:30px"></i>
+          <p style="font-size: 1px;margin-top: 10px;">{{ i.font }}</p>
+        </el-link>
+      </el-badge>
+      <el-link :underline="false" @click="tz(i.src)" v-else>
         <i :class="i.class" style="font-size:30px"></i>
         <p style="font-size: 1px;margin-top: 10px;">{{ i.font }}</p>
       </el-link>
-      <!-- </router-link> -->
     </el-card>
     <el-link :underline="false" @click="top">
       <el-card style="width: 90px;height: 90px;text-align: center; margin-top: 30px;" class="tmd">
@@ -27,14 +31,14 @@
 export default {
   props: ['cb'],
   methods: {
-    tz(src) {
-      this.$router.push({ path: src });
+    tz (src) {
+      this.$router.push({ path: src })
     },
-    top() {
-      app.scrollIntoView();
+    top () {
+      app.scrollIntoView()
     }
   }
-};
+}
 </script>
 
 <style>

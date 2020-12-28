@@ -4,15 +4,17 @@
     <el-main style="margin-top: 80px">
       <el-row :gutter="20">
         <el-col :span="6">
-          <el-card shadow="never" class="text">
-            <h1 style="font-size: 25px;">时间区间</h1>
-            <el-image src="http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif"></el-image>
-            <h1>距离结束还有</h1>
-            <!-- 时间 -->
-            {{this.$moment().date()}}
+          <el-card shadow="never" style="text-align: center;">
+            <font size="6" color="red">{{ start }}:00 - {{ end }}:00场</font>
+            <el-image src="https://images.weserv.nl/?url=https://file.pzhanpaihang.com/p/85816883/0_c3374d55d00196816c9c3f796a39dd6f.jpg" style="margin-top: 15px;"></el-image>
+            <div style="margin-top: 10px;">
+              <font size="6">距离结束还有</font>
+              <!-- 时间 -->
+              <djs :end="end" :start="start" @add="add"></djs>
+            </div>
           </el-card>
         </el-col>
-        <el-col :span="18" style="margin-top: 20px;">
+        <el-col :span="18" style="margin-top: 00px;">
           <vueper-slides
             class="no-shadow"
             :visible-slides="3"
@@ -48,16 +50,29 @@
 </template>
 
 <script>
-import { VueperSlides, VueperSlide } from 'vueperslides';
-import 'vueperslides/dist/vueperslides.css';
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
+import djs from './djs.vue'
 export default {
   props: ['sp'],
-  data() {
+  data () {
     return {
-    };
+      end: 8,
+      start: 0
+    }
   },
-  components: { vueperSlides: VueperSlides, vueperSlide: VueperSlide }
-};
+  components: { vueperSlides: VueperSlides, vueperSlide: VueperSlide, djs },
+  methods: {
+    add () {
+      this.end += 8
+      this.start += 8
+      if (this.end > 24) {
+        this.start = 0
+        this.end = 8
+      }
+    }
+  }
+}
 </script>
 
 <style>

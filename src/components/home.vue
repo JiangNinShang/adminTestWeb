@@ -21,13 +21,13 @@
 </template>
 
 <script>
-import cog from './ClassificationOfGoods.vue';
-import ms from './ms.vue';
-import cbl from './cbl.vue';
-import nk from './nk.vue';
-import footsie from './footsie.vue';
+import cog from './ClassificationOfGoods.vue'
+import ms from './ms.vue'
+import cbl from './cbl.vue'
+import nk from './nk.vue'
+import footsie from './footsie.vue'
 export default {
-  data() {
+  data () {
     return {
       img: [
         '../../static/img/白狐儿脸.jpg',
@@ -59,18 +59,24 @@ export default {
           // el-icon-shopping-cart-2
           class: 'el-icon-shopping-cart-full',
           font: '购物车',
-          src: '/'
+          src: '/',
+          type: 'badge',
+          num: '0'
         },
         {
           class: 'el-icon-coin',
           font: '消费记录',
-          src: '/'
+          src: '/',
+          type: 'badge',
+          num: '0'
         },
         {
           // el-icon-chat-dot-round
           class: 'el-icon-chat-round',
           font: '我的消息',
-          src: '/'
+          src: '/',
+          type: 'badge',
+          num: '0'
         },
         {
           class: 'el-icon-share',
@@ -97,7 +103,7 @@ export default {
         { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
         { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 }
       ]
-    };
+    }
   },
   methods: {},
   components: {
@@ -107,7 +113,7 @@ export default {
     footsie: footsie,
     nk: nk
   }
-};
+}
 </script>
 
 <style>
