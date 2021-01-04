@@ -22,7 +22,7 @@
             autoplay
             :dragging-distance="70"
             progress
-            fixed-height="600px"
+            fixed-height="550px"
             style="width: 90%;text-align:center;margin-left: 25px;"
           >
             <vueper-slide v-for="(slide, i) in sp" :key="i">
@@ -31,12 +31,14 @@
                   <el-link href="#">
                     <el-card shadow="hover" class="text" style="width: 250px;">
                       <el-image :src="slide.img" style="width: 200px;height: 300px;"></el-image>
-                      <h1>{{ slide.name }}</h1>
-                      <p>
-                        <font color="darkgray" size="3px">{{ slide.js }}</font>
-                      </p>
+                      {{ slide.name }}
+                      <br />
+                      <font color="darkgray" size="3px">{{ slide.js }}</font>
+                      <br />
                       <font color="orangered" size="5px">￥{{ slide.new }}</font>
                       <font style="text-decoration:line-through;margin-left: 20px;" color="darkgray" size="3px">￥{{ slide.old }}</font>
+                      <br />
+                      <el-button @click="jia(i)">加入购物车</el-button>
                     </el-card>
                   </el-link>
                 </div>
@@ -70,6 +72,9 @@ export default {
         this.start = 0
         this.end = 8
       }
+    },
+    jia (val) {
+      this.$emit('jia', val)
     }
   }
 }

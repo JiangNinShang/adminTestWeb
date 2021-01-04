@@ -12,7 +12,9 @@
           </el-carousel-item>
         </el-carousel>
         <br />
-        <ms :sp="sp"></ms>
+        <ms :sp="sp" @jia="jia"></ms>
+        <br />
+        <gg></gg>
       </el-main>
       <el-aside style="width: 15%;"><cbl :cb="cb"></cbl></el-aside>
     </el-container>
@@ -26,6 +28,8 @@ import ms from './ms.vue'
 import cbl from './cbl.vue'
 import nk from './nk.vue'
 import footsie from './footsie.vue'
+import gg from './gg.vue'
+import * as c from '../assets/cbl.js' // 引入常量
 export default {
   data () {
     return {
@@ -49,75 +53,76 @@ export default {
         { value: '冬季商品', giao: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }, { value: '6' }, { value: '7' }, { value: '8' }] },
         { value: '冬季商品', giao: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }, { value: '6' }, { value: '7' }, { value: '8' }] }
       ],
-      cb: [
-        {
-          class: 'el-icon-user',
-          font: '关于我们',
-          src: 'info'
-        },
-        {
-          // el-icon-shopping-cart-2
-          class: 'el-icon-shopping-cart-full',
-          font: '购物车',
-          src: '/',
-          type: 'badge',
-          num: '0'
-        },
-        {
-          class: 'el-icon-coin',
-          font: '消费记录',
-          src: '/',
-          type: 'badge',
-          num: '0'
-        },
-        {
-          // el-icon-chat-dot-round
-          class: 'el-icon-chat-round',
-          font: '我的消息',
-          src: '/',
-          type: 'badge',
-          num: '0'
-        },
-        {
-          class: 'el-icon-share',
-          font: '分享好友',
-          src: '/'
-        }
-      ],
+      cb: c.cao, // [{
+      //   class: 'el-icon-user',
+      //   font: '关于我们',
+      //   src: 'info'
+      // },
+      // {
+      //   // el-icon-shopping-cart-2
+      //   class: 'el-icon-shopping-cart-full',
+      //   font: '购物车',
+      //   src: '/',
+      //   type: 'badge',
+      //   num: 0
+      // },
+      // {
+      //   class: 'el-icon-coin',
+      //   font: '消费记录',
+      //   src: '/',
+      //   type: 'badge',
+      //   num: 0
+      // },
+      // {
+      //   // el-icon-chat-dot-round
+      //   class: 'el-icon-chat-round',
+      //   font: '我的消息',
+      //   src: '/',
+      //   type: 'badge',
+      //   num: 0
+      // },
+      // {
+      //   class: 'el-icon-share',
+      //   font: '分享好友',
+      //   src: '/'
+      // }]
+
       sp: [
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: 'js', new: 11.0, old: 15.15 }
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 }
       ]
     }
   },
-  methods: {},
+  methods: {
+    jia (val) {
+      this.cb[1].num += 1
+      // 将val存入购物车
+    }
+  },
   components: {
-    cog: cog,
-    ms: ms,
-    cbl: cbl,
-    footsie: footsie,
-    nk: nk
+    cog,
+    ms,
+    cbl,
+    footsie,
+    nk,
+    gg
   }
 }
 </script>
 
-<style>
-.test {
-  border: 1px red solid;
-}
-</style>
+<style></style>

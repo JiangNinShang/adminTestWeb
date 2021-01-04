@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     a () {
-      alert('a')
+      alert(this.input)
     },
     time () {
       clearInterval(this.s)
