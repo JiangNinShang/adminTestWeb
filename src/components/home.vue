@@ -88,23 +88,23 @@ export default {
       // }]
 
       sp: [
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
-        { img: 'http://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 }
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 },
+        { img: 'https://img.doutula.com/production/uploads/image/2017/11/18/20171118014731_AXirgI.gif', name: 'giao', js: '芜湖上将，起飞！！', new: 11.0, old: 15.15 }
       ]
     }
   },

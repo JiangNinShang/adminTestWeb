@@ -176,13 +176,11 @@ export default {
   },
   watch: {
     pwd: function (newValue, oldValue) {
-      if (1 === 1) {
-        const yz = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,8}$/
-        if (!yz.test(newValue)) {
-          this.status = true
-        } else {
-          this.status = false
-        }
+      const yz = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,8}$/
+      if (!yz.test(newValue)) {
+        this.status = true
+      } else {
+        this.status = false
       }
     }
   }

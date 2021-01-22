@@ -21,6 +21,7 @@ Vue.prototype.axios = axios
 Vue.prototype.$http = axios
 Vue.prototype.store = store
 axios.defaults.headers.post['Content-Type'] = 'application/json;Charset=UTF-8'
+// Vue.prototype.$http.defaults.baseURL = 'https://118.239.10.88:8090/'
 Vue.prototype.$http.defaults.baseURL = 'http://localhost:8090/'
 Vue.prototype.$pcaa = pcaa;
 Vue.prototype.$moment = moment;

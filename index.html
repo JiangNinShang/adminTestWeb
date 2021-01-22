@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" /> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-   <!-- <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script> -->
     <title>giao</title>
   </head>
-  <body>
+  <body onunload="goodbye()">
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
   <style>
     /* 隐藏进度条 */
-   html {
+    html {
       height: 100%;
       width: 100%;
       overflow: hidden;
@@ -27,4 +28,23 @@
       padding-right: 17px;
     }
   </style>
+  <script>
+    var OriginTitile = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        document.title = '(/ω＼*)……… (/ω•＼*)';
+        clearTimeout(titleTime);
+      } else {
+        document.title = '（づ￣3￣）づ╭❤～';
+        titleTime = setTimeout(function() {
+          document.title = OriginTitile;
+        }, 1500);
+      }
+    });
+    window.onbeforeunload = function(e) {
+      var e = window.event || e;
+      e.returnValue = ("确定离开当前页面吗？");
+    }
+  </script>
 </html>

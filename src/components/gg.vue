@@ -45,11 +45,11 @@
         </el-col>
       </el-row>
       <el-row v-if="tre">
-        <el-col :span="4"><el-image src="http://n.sinaimg.cn/sinacn10120/5/w586h1019/20200209/ef0d-ipfprtp0659749.jpg" class="h" fit="cover"></el-image></el-col>
-        <el-col :span="4" :offset="1"><el-image src="http://n.sinaimg.cn/sinacn10120/12/w586h1026/20200209/05bc-ipfprtp0659888.jpg" class="h" fit="cover"></el-image></el-col>
-        <el-col :span="4" :offset="1"><el-image src="http://n.sinaimg.cn/sinacn10120/49/w600h1049/20200209/7fab-ipfprtp0660011.jpg" class="h" fit="cover"></el-image></el-col>
-        <el-col :span="4" :offset="1"><el-image src="http://n.sinaimg.cn/sinacn10120/9/w586h1023/20200209/b703-ipfprtp0660159.jpg" class="h" fit="cover"></el-image></el-col>
-        <el-col :span="4" :offset="1"><el-image src="http://n.sinaimg.cn/sinacn10120/799/w586h1013/20200209/c271-ipfprtp0660282.jpg" class="h" fit="cover"></el-image></el-col>
+        <el-col :span="4"><el-image src="https://n.sinaimg.cn/sinacn10120/5/w586h1019/20200209/ef0d-ipfprtp0659749.jpg" class="h" fit="cover"></el-image></el-col>
+        <el-col :span="4" :offset="1"><el-image src="https://n.sinaimg.cn/sinacn10120/12/w586h1026/20200209/05bc-ipfprtp0659888.jpg" class="h" fit="cover"></el-image></el-col>
+        <el-col :span="4" :offset="1"><el-image src="https://n.sinaimg.cn/sinacn10120/49/w600h1049/20200209/7fab-ipfprtp0660011.jpg" class="h" fit="cover"></el-image></el-col>
+        <el-col :span="4" :offset="1"><el-image src="https://n.sinaimg.cn/sinacn10120/9/w586h1023/20200209/b703-ipfprtp0660159.jpg" class="h" fit="cover"></el-image></el-col>
+        <el-col :span="4" :offset="1"><el-image src="https://n.sinaimg.cn/sinacn10120/799/w586h1013/20200209/c271-ipfprtp0660282.jpg" class="h" fit="cover"></el-image></el-col>
       </el-row>
     </div>
   </div>

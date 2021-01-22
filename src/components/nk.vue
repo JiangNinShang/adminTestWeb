@@ -1,20 +1,13 @@
 <template>
   <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
-    <el-menu-item index="1">
+    <el-menu-item index="/">
       <template slot="title">
         首页
       </template>
     </el-menu-item>
     <el-menu-item index="2" style="margin-left: 250px;">
       <template slot="title">
-        <iframe
-          allowtransparency="true"
-          frameborder="0"
-          width="565"
-          height="64"
-          scrolling="no"
-          src="//tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=1&v=2&d=3&bd=0&k=000000&f=&ltf=009944&htf=cc0000&q=1&e=1&a=1&c=71952&w=565&h=64&align=left"
-        ></iframe>
+        我是一个占位的
       </template>
     </el-menu-item>
     <el-menu-item index="3" disabled style="margin-left: 50px;">
@@ -38,7 +31,7 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       activeIndex: '1',
       input: '',
@@ -46,29 +39,29 @@ export default {
       item: ['请输入内容', 'gagaga', 'wuwhuwhuwhuw'],
       i: -1,
       s: ''
-    }
+    };
   },
   methods: {
-    a () {
-      alert(this.input)
+    a() {
+      alert(this.input);
     },
-    time () {
-      clearInterval(this.s)
+    time() {
+      clearInterval(this.s);
       this.s = setInterval(() => {
-        this.i++
+        this.i++;
         if (this.i < this.item.length) {
-          this.sb = this.item[this.i]
+          this.sb = this.item[this.i];
         } else {
-          this.i = 0
-          this.sb = this.item[this.i]
+          this.i = 0;
+          this.sb = this.item[this.i];
         }
-      }, 3000)
+      }, 3000);
     }
   },
-  created () {
-    this.time()
+  created() {
+    this.time();
   }
-}
+};
 </script>
 <style>
 .el-input__inner::placeholder {
