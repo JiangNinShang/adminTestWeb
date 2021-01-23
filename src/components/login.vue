@@ -19,7 +19,7 @@
             <el-row>
               <el-col :span="6" :offset="1">
                 <!-- QQ -->
-                <el-avatar src="https://pics.sc.chinaz.com/Files/pic/icons128/5949/q8.png" />
+                <el-avatar src="https://scpic.chinaz.net/Files/pic/icons128/5949/q3.png" />
               </el-col>
               <el-col :span="6" :offset="3">
                 <!-- 微信 -->
@@ -48,7 +48,7 @@
 <script>
 export default {
   name: 'login',
-  data() {
+  data () {
     return {
       form: {
         uname: '',
@@ -60,10 +60,10 @@ export default {
         upwd: [{ required: true, message: '请输入密码', trigger: 'blur' }, { min: 6, max: 8, message: '密码长度在 6 到 8 个字符', trigger: 'blur' }]
       },
       restaurants: []
-    };
+    }
   },
   methods: {
-    sumbit(form) {
+    sumbit (form) {
       this.$refs[form].validate(valid => {
         if (valid) {
           this.store.dispatch('login', this.form).then(tes => {
@@ -73,53 +73,53 @@ export default {
                 title: '登录成功',
                 message: '欢迎您!用户：' + this.form.uname,
                 type: 'success'
-              });
-              this.$router.push('/home');
+              })
+              this.$router.push('/home')
             } else {
               this.$notify.error({
                 title: '登录失败',
                 message: tes.data.info
-              });
+              })
             }
-          });
+          })
         }
-      });
+      })
     },
-    register() {
-      this.$router.push('/register');
+    register () {
+      this.$router.push('/register')
     },
-    wj() {
-      this.$router.push('/czmm');
+    wj () {
+      this.$router.push('/czmm')
     },
-    querySearchAsync(queryString, callback) {
+    querySearchAsync (queryString, callback) {
       if (this.form.uname !== '' && this.form.uname !== null && undefined !== this.form.uname) {
-        var restaurants = this.restaurants;
+        var restaurants = this.restaurants
         // 在数组内查找
-        var results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants;
-        clearTimeout(this.timeout);
+        var results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants
+        clearTimeout(this.timeout)
         this.timeout = setTimeout(() => {
-          callback(results);
-        }, 2000 * Math.random());
+          callback(results)
+        }, 1000)
       } else {
-        let giao = [{ value: '请输入用户名' }];
-        callback(giao);
+        let giao = [{ value: '请输入用户名' }]
+        callback(giao)
       }
     },
-    createStateFilter(queryString) {
+    createStateFilter (queryString) {
       return state => {
-        return state.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0;
-      };
+        return state.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+      }
     }
   },
-  mounted() {
+  mounted () {
     this.store.dispatch('getName').then(tes => {
       for (var k in tes.data.data) {
-        let giao = { value: k };
-        this.restaurants.push(giao);
+        let giao = { value: k }
+        this.restaurants.push(giao)
       }
-    });
+    })
   }
-};
+}
 </script>
 <style>
 .area-select.large {
